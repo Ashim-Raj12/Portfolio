@@ -1,6 +1,6 @@
 # 🚀 My Portfolio
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge&logo=vercel)](https://portfolio-jyhgw4v88-ashim-rajs-projects.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge&logo=vercel)](https://portfolio-ashimraj.netlify.app/)
 
 Hey there! 👋 Welcome to my personal portfolio website - a showcase of my journey as a developer and the projects I've built along the way. This is where I share my passion for creating beautiful, functional web applications.
 
