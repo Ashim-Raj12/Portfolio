@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +9,9 @@ const Header = () => {
         <div
           className="text-3xl font-extrabold text-blue-400 tracking-wide cursor-pointer select-none hover:text-blue-300 transition duration-300"
           onClick={() => {
-            document.querySelector('#hero').scrollIntoView({ behavior: 'smooth' });
+            document
+              .querySelector("#hero")
+              .scrollIntoView({ behavior: "smooth" });
             setIsOpen(false);
           }}
         >
@@ -49,7 +51,7 @@ const Header = () => {
         </div>
         <ul
           className={`${
-            isOpen ? 'block' : 'hidden'
+            isOpen ? "block" : "hidden"
           } absolute top-full left-0 w-full bg-gray-900 bg-opacity-95 backdrop-blur-lg md:static md:flex md:space-x-8 md:w-auto md:bg-transparent md:backdrop-blur-0 text-gray-300 font-semibold text-lg`}
         >
           <li>
