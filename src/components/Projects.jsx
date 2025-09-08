@@ -76,9 +76,12 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-24 bg-gradient-to-br from-gray-900 to-black"
+      className="py-24 bg-slate-950 relative overflow-hidden"
     >
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-950/20 via-purple-950/20 to-slate-950"></div>
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <h2 className="text-5xl font-extrabold text-center text-white mb-16 relative">
           Projects
           <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
@@ -87,7 +90,7 @@ const Projects = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer border border-gray-700 group"
+              className="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer border border-white/10 hover:bg-white/10 hover:border-white/20 group"
               onClick={() => setSelectedProject(project)}
             >
               <div className="h-56 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center group-hover:scale-110 transition duration-300">

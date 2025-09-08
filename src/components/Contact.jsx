@@ -39,14 +39,17 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-br from-gray-800 to-gray-900">
-      <div className="container mx-auto px-6 max-w-6xl">
+    <section id="contact" className="py-24 bg-slate-950 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-950/20 via-purple-950/20 to-slate-950"></div>
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
         <h2 className="text-5xl font-extrabold text-center text-white mb-16 relative">
           Contact Me
           <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700">
+          <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-white/10">
             <h3 className="text-2xl font-bold text-white mb-6">Get In Touch</h3>
             <p className="text-gray-300 mb-8 leading-relaxed">
               I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology. Feel free to reach out!
@@ -78,7 +81,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700">
+          <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-white/10">
             {submitted && (
               <div className="mb-6 p-4 bg-green-900/50 text-green-300 rounded-xl border border-green-500/30">
                 Thank you for your message! I will get back to you soon.
@@ -91,7 +94,7 @@ const Contact = () => {
                   type="text"
                   id="name"
                   name="name"
-                  className={`w-full p-4 border-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 bg-gray-700 text-white placeholder-gray-400 ${errors.name ? 'border-red-500' : 'border-gray-600'}`}
+                  className={`w-full p-4 border-2 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-400 transition duration-300 bg-gray-800 text-white placeholder-gray-400 shadow-sm ${errors.name ? 'border-red-500 ring-red-400' : 'border-gray-600'}`}
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your Name"
@@ -104,7 +107,7 @@ const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
-                  className={`w-full p-4 border-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 bg-gray-700 text-white placeholder-gray-400 ${errors.email ? 'border-red-500' : 'border-gray-600'}`}
+                  className={`w-full p-4 border-2 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-400 transition duration-300 bg-gray-800 text-white placeholder-gray-400 shadow-sm ${errors.email ? 'border-red-500 ring-red-400' : 'border-gray-600'}`}
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="your.email@example.com"
@@ -117,7 +120,7 @@ const Contact = () => {
                   id="message"
                   name="message"
                   rows="5"
-                  className={`w-full p-4 border-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 bg-gray-700 text-white placeholder-gray-400 ${errors.message ? 'border-red-500' : 'border-gray-600'}`}
+                  className={`w-full p-4 border-2 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-400 transition duration-300 bg-gray-800 text-white placeholder-gray-400 shadow-sm ${errors.message ? 'border-red-500 ring-red-400' : 'border-gray-600'}`}
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Your message here..."

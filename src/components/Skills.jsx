@@ -46,31 +46,80 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 bg-gradient-to-br from-gray-900 to-gray-800">
-      <div className="container mx-auto px-6 max-w-6xl">
-        <h2 className="text-4xl font-extrabold text-center text-white mb-12 relative">
-          Professional Skills
-          <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
-        </h2>
-        {skillGroups.map((group, idx) => (
-          <div key={idx} className="mb-16">
-            <h3 className="text-2xl font-semibold text-white mb-6">{group.groupName}</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
-              {group.skills.map((skill, index) => (
-                <div key={index} className="bg-gray-800 p-6 md:p-8 rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:scale-105 border border-gray-700 flex flex-col items-center text-center">
-                  <span className="font-semibold text-lg md:text-xl text-white mb-3">{skill.name}</span>
-                  <div className="w-full bg-gray-700 rounded-full h-3 md:h-4 overflow-hidden">
-                    <div
-                      className={`bg-gradient-to-r ${skill.color} h-3 md:h-4 rounded-full transition-all duration-1000 ease-out shadow-md`}
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
+    <section id="skills" className="py-20 bg-slate-950 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-950/20 via-purple-950/20 to-slate-950"></div>
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold text-white mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            Professional Skills
+          </h2>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            A comprehensive overview of my technical expertise and proficiency levels
+          </p>
+        </div>
+
+        <div className="space-y-12">
+          {skillGroups.map((group, idx) => (
+            <div key={idx} className="group">
+              <div className="flex items-center mb-8">
+                <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
+                <h3 className="px-6 text-2xl font-semibold text-white bg-slate-950">
+                  {group.groupName}
+                </h3>
+                <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
+              </div>
+              
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {group.skills.map((skill, index) => (
+                  <div 
+                    key={index} 
+                    className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group-hover:scale-105 cursor-pointer"
+                  >
+                    {/* Skill name and percentage */}
+                    <div className="flex justify-between items-start mb-4">
+                      <h4 className="font-semibold text-white text-lg">{skill.name}</h4>
+                      <span className="text-sm font-bold text-gray-300 bg-white/10 px-2 py-1 rounded-full">
+                        {skill.level}%
+                      </span>
+                    </div>
+                    
+                    {/* Progress bar */}
+                    <div className="relative">
+                      <div className="w-full bg-gray-800/50 rounded-full h-2 overflow-hidden">
+                        <div
+                          className={`bg-gradient-to-r ${skill.color} h-2 rounded-full transition-all duration-1000 ease-out relative`}
+                          style={{ width: `${skill.level}%` }}
+                        >
+                          <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
+                        </div>
+                      </div>
+                      
+                      {/* Glow effect */}
+                      <div 
+                        className={`absolute top-0 left-0 h-2 bg-gradient-to-r ${skill.color} rounded-full blur-sm opacity-60 transition-all duration-1000 ease-out`}
+                        style={{ width: `${skill.level}%` }}
+                      ></div>
+                    </div>
+                    
+                    {/* Proficiency level text */}
+                    <div className="mt-3 flex justify-between text-xs text-gray-400">
+                      <span>Proficiency</span>
+                      <span className="font-medium">
+                        {skill.level >= 90 ? 'Expert' : 
+                         skill.level >= 80 ? 'Advanced' : 
+                         skill.level >= 70 ? 'Intermediate' : 'Beginner'}
+                      </span>
+                    </div>
                   </div>
-                  <span className="text-xs md:text-sm text-gray-400 mt-2">{skill.level}% proficiency</span>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
